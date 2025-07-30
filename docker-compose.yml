@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  sampleproject:
+    image: paretareactsite
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /src/web
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000

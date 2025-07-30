@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Pareta Innovations" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@sekmet/mmenu-light@3.0.6/dist/mmenu-light.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="Pareta Innovations">
+    <meta name="description" content="Pareta Innovations is a technology company focusing on electric drive systems and batteries">
+    <meta name="keywords" content="motor, drive, pareta, battery, electric, ethical">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+
+    <title>Pareta Innovations LTD</title>
+  </head>
+  <body style="position: relative; display: inline-block; background: white; width: 100%">
+    <div id="root" style="width: 100%; height: auto;"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded", () => {
+          const menu = new MmenuLight(
+            document.querySelector( "#nav-menu" ),
+              "(max-width: 1023px)"
+            );
+
+            const navigator = menu.navigation();
+            const drawer = menu.offcanvas();
+
+            document.querySelector( "a[href='#nav-menu']" )
+              .addEventListener( "click", ( evnt ) => {
+                evnt.preventDefault();
+                drawer.open();
+            });
+          }
+        );
+    </script>
+  </body>
+</html>
